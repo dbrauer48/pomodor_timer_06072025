@@ -30,6 +30,7 @@ class PomodoroTimer {
         this.saveSettingsBtn = document.getElementById('saveSettings');
         this.progressBar = document.querySelector('.progress-bar');
         this.timerContent = document.querySelector('.timer-content');
+        this.playIcon = this.playPauseBtn.querySelector('.btn-icon');
 
         // Settings inputs
         this.workDurationInput = document.getElementById('workDuration');
@@ -121,7 +122,7 @@ class PomodoroTimer {
     // Start timer
     startTimer() {
         this.isRunning = true;
-        this.playPauseBtn.querySelector('.btn-text').textContent = 'Pause';
+        this.playIcon.textContent = '⏸';
         this.timerContent.classList.add('pulsing');
 
         this.interval = setInterval(() => {
@@ -138,7 +139,7 @@ class PomodoroTimer {
     // Pause timer
     pauseTimer() {
         this.isRunning = false;
-        this.playPauseBtn.querySelector('.btn-text').textContent = 'Start';
+        this.playIcon.textContent = '▶';
         this.timerContent.classList.remove('pulsing');
         clearInterval(this.interval);
     }
