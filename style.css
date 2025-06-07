@@ -192,7 +192,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: var(--spacing-lg) 0;
-    padding: 0 calc(var(--spacing-xl) * 5);
+    padding: 0 115px; /* 110% of hover state width (64px + 40px shadow = 104px * 1.1 = 115px) */
 }
 
 .control-btn {
@@ -411,7 +411,7 @@ body {
     }
     
     .controls {
-        padding: 0 calc(var(--spacing-lg) * 5);
+        padding: 0 106px; /* 110% of tablet hover state width (56px + 40px shadow = 96px * 1.1 = 106px) */
     }
     
     .control-btn {
@@ -438,7 +438,7 @@ body {
     }
     
     .controls {
-        padding: 0 calc(var(--spacing-md) * 5);
+        padding: 0 97px; /* 110% of mobile hover state width (48px + 40px shadow = 88px * 1.1 = 97px) */
     }
     
     .control-btn {
