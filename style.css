@@ -226,64 +226,7 @@ body {
     box-shadow: var(--shadow-pressed);
 }
 
-/* Bottom Controls */
-.bottom-controls {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--surface-raised);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-raised);
-}
 
-.icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: var(--radius-full);
-    background: var(--surface-raised);
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
-}
-
-.icon-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
-}
-
-.icon-btn:active {
-    transform: translateY(0);
-    box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
-}
-
-.icon-btn.primary {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 6px 6px 12px rgba(232, 90, 79, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.8);
-}
-
-.icon-btn.primary:hover {
-    box-shadow: 8px 8px 16px rgba(232, 90, 79, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.9);
-}
-
-.icon-btn.primary:active {
-    box-shadow: inset 6px 6px 12px rgba(215, 48, 39, 0.8), inset -6px -6px 12px rgba(255, 255, 255, 0.3);
-}
-
-.icon {
-    font-size: var(--font-size-md);
-    color: var(--text-secondary);
-}
-
-.icon-btn.primary .icon {
-    color: white;
-}
 
 /* Settings Modal */
 .settings-modal {
@@ -481,15 +424,6 @@ body {
         min-width: 90px;
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 0.75rem;
-    }
-    
-    .bottom-controls {
-        padding: var(--spacing-sm);
-    }
-    
-    .icon-btn {
-        width: 40px;
-        height: 40px;
     }
 }
 

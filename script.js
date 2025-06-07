@@ -24,7 +24,6 @@ class PomodoroTimer {
         this.sessionLabel = document.getElementById('sessionLabel');
         this.playPauseBtn = document.getElementById('playPauseBtn');
         this.resetBtn = document.getElementById('resetBtn');
-        this.playBtn = document.getElementById('playBtn');
         this.settingsBtn = document.getElementById('settingsBtn');
         this.settingsModal = document.getElementById('settingsModal');
         this.closeSettingsBtn = document.getElementById('closeSettings');
@@ -60,7 +59,6 @@ class PomodoroTimer {
     setupEventListeners() {
         // Control buttons
         this.playPauseBtn.addEventListener('click', () => this.toggleTimer());
-        this.playBtn.addEventListener('click', () => this.toggleTimer());
         this.resetBtn.addEventListener('click', () => this.resetTimer());
         this.settingsBtn.addEventListener('click', () => this.openSettings());
 
@@ -124,7 +122,6 @@ class PomodoroTimer {
     startTimer() {
         this.isRunning = true;
         this.playPauseBtn.querySelector('.btn-text').textContent = 'Pause';
-        this.playBtn.querySelector('.icon').textContent = '⏸';
         this.timerContent.classList.add('pulsing');
 
         this.interval = setInterval(() => {
@@ -142,7 +139,6 @@ class PomodoroTimer {
     pauseTimer() {
         this.isRunning = false;
         this.playPauseBtn.querySelector('.btn-text').textContent = 'Start';
-        this.playBtn.querySelector('.icon').textContent = '▶';
         this.timerContent.classList.remove('pulsing');
         clearInterval(this.interval);
     }
