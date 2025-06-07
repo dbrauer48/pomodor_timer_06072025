@@ -192,7 +192,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: var(--spacing-lg) 0;
-    padding: 0 calc(var(--spacing-xl) * 2.5);
+    padding: 0 calc(var(--spacing-xl) * 5);
 }
 
 .control-btn {
@@ -411,7 +411,7 @@ body {
     }
     
     .controls {
-        padding: 0 calc(var(--spacing-lg) * 2);
+        padding: 0 calc(var(--spacing-lg) * 5);
     }
     
     .control-btn {
@@ -438,7 +438,7 @@ body {
     }
     
     .controls {
-        padding: 0 calc(var(--spacing-md) * 2);
+        padding: 0 calc(var(--spacing-md) * 5);
     }
     
     .control-btn {
