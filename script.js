@@ -22,10 +22,9 @@ class PomodoroTimer {
         // DOM elements
         this.timeDisplay = document.getElementById('timeDisplay');
         this.sessionLabel = document.getElementById('sessionLabel');
-        this.completedSessionsEl = document.getElementById('completedSessions');
         this.playPauseBtn = document.getElementById('playPauseBtn');
-        this.playIcon = document.getElementById('playIcon');
         this.resetBtn = document.getElementById('resetBtn');
+        this.playBtn = document.getElementById('playBtn');
         this.settingsBtn = document.getElementById('settingsBtn');
         this.settingsModal = document.getElementById('settingsModal');
         this.closeSettingsBtn = document.getElementById('closeSettings');
@@ -61,6 +60,7 @@ class PomodoroTimer {
     setupEventListeners() {
         // Control buttons
         this.playPauseBtn.addEventListener('click', () => this.toggleTimer());
+        this.playBtn.addEventListener('click', () => this.toggleTimer());
         this.resetBtn.addEventListener('click', () => this.resetTimer());
         this.settingsBtn.addEventListener('click', () => this.openSettings());
 
@@ -123,8 +123,8 @@ class PomodoroTimer {
     // Start timer
     startTimer() {
         this.isRunning = true;
-        this.playIcon.textContent = '⏸';
         this.playPauseBtn.querySelector('.btn-text').textContent = 'Pause';
+        this.playBtn.querySelector('.icon').textContent = '⏸';
         this.timerContent.classList.add('pulsing');
 
         this.interval = setInterval(() => {
@@ -141,8 +141,8 @@ class PomodoroTimer {
     // Pause timer
     pauseTimer() {
         this.isRunning = false;
-        this.playIcon.textContent = '▶';
         this.playPauseBtn.querySelector('.btn-text').textContent = 'Start';
+        this.playBtn.querySelector('.icon').textContent = '▶';
         this.timerContent.classList.remove('pulsing');
         clearInterval(this.interval);
     }
@@ -162,7 +162,7 @@ class PomodoroTimer {
         if (this.currentSession === 'work') {
             this.completedSessions++;
             this.sessionCount++;
-            this.updateCompletedSessions();
+            this.updateSessionDisplay();
             
             // Determine next session type
             if (this.sessionCount % 4 === 0) {
@@ -224,26 +224,17 @@ class PomodoroTimer {
         this.timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
         // Update page title
-        document.title = `${this.timeDisplay.textContent} - ${this.getSessionName()} | 🍅 Pomodoro`;
+        document.title = `${this.timeDisplay.textContent} - Timer`;
     }
 
     // Update session label
     updateSessionLabel() {
-        this.sessionLabel.textContent = this.getSessionName();
+        this.updateSessionDisplay();
     }
 
-    // Get session name
-    getSessionName() {
-        switch (this.currentSession) {
-            case 'work':
-                return 'Focus Time';
-            case 'shortBreak':
-                return 'Short Break';
-            case 'longBreak':
-                return 'Long Break';
-            default:
-                return 'Focus Time';
-        }
+    // Update session display with simplified format
+    updateSessionDisplay() {
+        this.sessionLabel.textContent = `Today ${this.completedSessions}/10`;
     }
 
     // Update progress bar
@@ -262,10 +253,7 @@ class PomodoroTimer {
         }
     }
 
-    // Update completed sessions display
-    updateCompletedSessions() {
-        this.completedSessionsEl.textContent = this.completedSessions;
-    }
+
 
     // Play notification sound
     playNotificationSound() {
@@ -344,7 +332,7 @@ class PomodoroTimer {
             const savedSessions = localStorage.getItem('pomodoroCompletedSessions');
             if (savedSessions) {
                 this.completedSessions = parseInt(savedSessions);
-                this.updateCompletedSessions();
+                this.updateSessionDisplay();
             }
 
             // Load session count for long break tracking

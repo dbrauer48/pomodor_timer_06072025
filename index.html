@@ -12,8 +12,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="title">🍅 Pomodoro</h1>
-            <p class="subtitle">Focus • Break • Repeat</p>
+            <h1 class="title">Timer</h1>
         </header>
 
         <main class="timer-section">
@@ -25,26 +24,35 @@
                     </svg>
                     <div class="timer-content">
                         <div class="time-display" id="timeDisplay">25:00</div>
-                        <div class="session-label" id="sessionLabel">Focus Time</div>
-                        <div class="session-count">
-                            <span id="completedSessions">0</span> sessions completed
-                        </div>
+                        <div class="session-label" id="sessionLabel">Today 3/10</div>
                     </div>
                 </div>
             </div>
 
             <div class="controls">
-                <button class="control-btn primary" id="playPauseBtn">
-                    <span class="btn-icon" id="playIcon">▶</span>
-                    <span class="btn-text">Start</span>
+                <button class="control-btn" id="playPauseBtn">
+                    <span class="btn-text">Pause</span>
                 </button>
-                <button class="control-btn secondary" id="resetBtn">
-                    <span class="btn-icon">↻</span>
+                <button class="control-btn" id="resetBtn">
                     <span class="btn-text">Reset</span>
                 </button>
-                <button class="control-btn secondary" id="settingsBtn">
-                    <span class="btn-icon">⚙</span>
-                    <span class="btn-text">Settings</span>
+            </div>
+
+            <div class="bottom-controls">
+                <button class="icon-btn" id="menuBtn">
+                    <span class="icon">☰</span>
+                </button>
+                <button class="icon-btn primary" id="playBtn">
+                    <span class="icon">▶</span>
+                </button>
+                <button class="icon-btn" id="statsBtn">
+                    <span class="icon">📊</span>
+                </button>
+                <button class="icon-btn" id="settingsBtn">
+                    <span class="icon">⚙</span>
+                </button>
+                <button class="icon-btn" id="profileBtn">
+                    <span class="icon">👤</span>
                 </button>
             </div>
         </main>
@@ -89,14 +97,7 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <p class="keyboard-shortcuts">
-                <kbd>Space</kbd> Start/Pause • 
-                <kbd>R</kbd> Reset • 
-                <kbd>S</kbd> Settings • 
-                <kbd>Esc</kbd> Close
-            </p>
-        </footer>
+
     </div>
 
     <script src="script.js"></script>
