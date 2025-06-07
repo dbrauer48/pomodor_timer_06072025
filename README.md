@@ -54,10 +54,10 @@ A beautiful, clean, and distraction-free Pomodoro timer designed to help you mai
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pomodoro-timer.git
+git clone https://github.com/dbrauer48/pomodor_timer_06072025.git
 
 # Navigate to project directory
-cd pomodoro-timer
+cd pomodor_timer_06072025
 
 # Open index.html in your browser
 # OR serve locally with Python (optional)
@@ -115,4 +115,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-*Built with ❤️ for focused productivity* 
+*Built with ❤️ for focused productivity*
